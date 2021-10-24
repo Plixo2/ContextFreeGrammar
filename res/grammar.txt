@@ -1,0 +1,53 @@
+
+
+mainClass -> "class Test {" masterClass "}"
+masterClass -> class masterClass | class | class masterClass class
+
+class -> "class " names "{" function function function "}"
+
+function -> access " " type "(" type " " variable ") {" masterbody return "}" | function function
+
+masterbody -> body masterbody | body body masterbody | body
+
+access -> "public" | "private" | "" | "protected"
+
+body -> "if(" variable compare number ") {" body "}" | body
+body -> "if(" variable ") {" body "}" | body
+body -> "while(" variable ") {" body return "}" | body
+body -> "for(" variable " = " number "; " bool ";) {" body "}" | body
+body -> type " " variable " = " number ";"
+body -> variable " " operator "= " number ";"
+body -> variable "++;" | variable "--;" | body
+body -> type " " variable " = " newObj
+body -> variable " = " newObj
+
+newObj -> "new " type "();" | names "();" | names "(" number ");"
+
+operator -> "*" | "+" | "-" | "/" | "%"
+
+bool -> "false" | "true" | bool " " boolCompare " " bool
+
+type -> "int" | "boolean" | "String" | "long" | "float" | "Object" | "List<" type ">"
+
+number -> "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | number "0" | number "0" | number "0" | number
+
+return -> "return " variable ";" | "break;"
+
+compare -> "<" | ">" | boolCompare | "&&"
+
+boolCompare -> "" | "" | "" | "==" | "<=" | ">=" | "!="
+
+variable -> "a" | "b" | "c" | "x" | "y" | "z"
+
+names -> "world" | "box" | "algorithm" | "smallArgs" | "Random" | "Objectify" | "toString" | "transformIntoSpace" | "getRandomIndex"
+
+
+
+
+
+sentence -> "The " subject predicate object
+
+subject -> "cat " | "world " | "water "
+predicate -> "is " | "was "
+object -> "on fire." | "lit." | "jumping."
+
