@@ -87,7 +87,6 @@ public class Grammar {
                 String str = parser.removeQuotationMarks(object);
                 builder.append(str);
             } else {
-                System.out.println(rule + " last");
                 builder.append(generateByRule(object,randomize));
             }
         }

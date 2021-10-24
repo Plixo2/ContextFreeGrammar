@@ -65,7 +65,6 @@ public class Parser {
         return parse.startsWith(TERMINAL) && parse.endsWith(TERMINAL);
     }
     public String removeQuotationMarks(String str) {
-        System.out.println(str);
         return str.substring(1, str.length()-1);
     }
 

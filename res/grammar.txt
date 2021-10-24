@@ -45,7 +45,7 @@ names -> "world" | "box" | "algorithm" | "smallArgs" | "Random" | "Objectify" | 
 
 
 
-sentence -> "The " subject predicate object | "The " subject predicate object " and " sentence "."
+sentence -> "The " subject predicate object "."
 
 subject -> "cat " | "world " | "water "
 predicate -> "is " | "was "
