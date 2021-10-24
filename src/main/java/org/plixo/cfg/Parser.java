@@ -13,10 +13,9 @@ public class Parser {
     private final static String ASSIGN = "->";
     private final static String OR = "|";
     private final static String TERMINAL = "\"";
-    private final static String KEY_SEPARATOR = " ";
+    private final static char KEY_SEPARATOR = ' ';
 
-    int index = 0;
-    byte[] bytes;
+    int index;
 
     public Parser() {
         index = 0;
@@ -41,21 +40,21 @@ public class Parser {
         List<String> str = new ArrayList<>();
         byte[] bytes =  variant.stripLeading().stripTrailing().getBytes(StandardCharsets.UTF_8);
 
-        String string = "";
+        StringBuilder string = new StringBuilder();
         boolean inString = false;
-        for (int i = 0; i < bytes.length; i++) {
-            char c = (char) bytes[i];
-            if(c == '\"') {
+        for (byte aByte : bytes) {
+            char c = (char) aByte;
+            if (c == '\"') {
                 inString = !inString;
             }
-            if(c == ' ' && !inString) {
-                str.add(string);
-                string = "";
+            if (c == KEY_SEPARATOR && !inString) {
+                str.add(string.toString());
+                string = new StringBuilder();
                 continue;
             }
-            string += c;
+            string.append(c);
         }
-        str.add(string);
+        str.add(string.toString());
 
         return str.toArray(new String[0]);
     }
