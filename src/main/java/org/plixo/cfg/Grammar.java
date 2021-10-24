@@ -1,5 +1,8 @@
 package org.plixo.cfg;
 
+import org.plixo.cfg.exceptions.ParseException;
+import org.plixo.cfg.exceptions.VocabularyException;
+
 import java.util.*;
 
 public class Grammar {
@@ -15,7 +18,7 @@ public class Grammar {
 
     }
 
-    public void addRules(String lines) throws ParseException   {
+    public void addRules(String lines) throws ParseException {
         for (String line : lines.split(newLine)) {
             addRule(line);
         }
@@ -40,8 +43,6 @@ public class Grammar {
             orDefault.add(keys);
             rules.put(name, orDefault);
 
-          //  System.out.println(Arrays.toString(keys));
-           // System.out.println(variant + " " + parser.isKeyTerminal(variant));
         }
 
 

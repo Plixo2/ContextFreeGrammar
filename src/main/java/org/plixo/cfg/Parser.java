@@ -1,5 +1,7 @@
 package org.plixo.cfg;
 
+import org.plixo.cfg.exceptions.ParseException;
+
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.plixo.cfg;
+package org.plixo.cfg.exceptions;
 
 public class ParseException extends Exception {
 
